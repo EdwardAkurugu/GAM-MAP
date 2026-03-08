@@ -1,0 +1,25 @@
+---
+title: "about_2"
+author: "Edward"
+date: "2025-03-04"
+output: html_document
+---
+
+The **_GAM-MAP_** uses **GAMs** to explore the relationship between malaria and climate variables. The modeling process involves several steps, illustrated in the diagram below:
+
+<div style="text-align: center;">
+  <img src="images/GAM_modelling_workflow.png" alt="GAM Modeling Workflow" width="800" height="700">
+</div>
+
+
+**Workflow summary:**
+1. Set up the full GAM with all relevant predictors.  
+2. Review diagnostics and adjust if needed.  
+3. Evaluate smoothing terms to capture climate effects.  
+4. Assess significance and adjust basis dimension (`k`) if required.  
+5. Refit until stable, then finalise the full GAM.  
+6. Build reduced models and compare with the full model.  
+7. Select the best-fitting model and interpret results to support evidence-based insights for malaria control.  
+
+***For detailed algorithmic steps and mathematical formulation, please refer to the manuscript or GAM framework under the Appendix tab.***
+

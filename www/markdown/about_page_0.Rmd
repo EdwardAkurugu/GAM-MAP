@@ -1,0 +1,3 @@
+***
+
+The <span style="color:green;">GAM-MAP</span> is a dynamic tool developed to analyse the relationships between uncomplicated malaria cases and climatic variability at the regional level in Ghana. The app employs advanced statistical models, specifically <b>Generalised Additive Models (GAMs)</b>, to provide comprehensive insights into the temporal and climatic drivers of malaria across Ghana's regions.
