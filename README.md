@@ -115,47 +115,42 @@ All models were fitted using the [`mgcv`](https://cran.r-project.org/package=mgc
 | Western | Coastal | Model 1 | 566.42 | 92.7% | 95.0% |
 
 ---
-
 ## Repository Structure
 ```
 GAM-MAP/
-├── app.R                        # Main Shiny app entry point
-├── server.R                     # Server logic
-├── ui.R                         # UI definition
+├── app.R                        # Main entry point: loads dependencies, sources all files, runs app
+├── app/
+│   ├── server.R                 # Server logic
+│   └── ui.R                     # UI definition
 ├── dashboard_styles.R           # Custom CSS
-├── global.R                     # Global data loading and packages
 ├── packages.R                   # Package dependencies
 ├── data.R                       # Data loading and preparation
 ├── static plot function.R       # Static plot functions
 └── plot_themes.R                # Plot themes
 ```
 
-**`global.R`**
-```r
-# Load packages
-source("packages.R")
-
-# Load and prepare data
-source("data.R")
-
-# Load static plot functions
-source("static plot function.R")
-
-# Load plot themes
-source("plot_themes.R")
-
-# Load custom CSS styles
-source("dashboard_styles.R")
-```
-
 **`app.R`**
 ```r
-# Source global dependencies
-source("global.R")
+# Source packages
+source("packages.R")
 
-# Source UI and server
-source("ui.R")
-source("server.R")
+# Source the data file
+source("data.R")
+
+# Source static plot function
+source("static plot function.R")
+
+# Source plotting themes
+source("plot_themes.R")
+
+# Source custom CSS
+source("dashboard_styles.R")
+
+# Source the server file
+source("app/server.R")
+
+# Source the UI file
+source("app/ui.R")
 
 # Run the Shiny application
 shinyApp(ui = ui, server = server)
