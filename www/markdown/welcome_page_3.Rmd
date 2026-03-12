@@ -1,0 +1,25 @@
+---
+title: "about_3"
+author: "Edward"
+date: "2025-03-04"
+output: html_document
+---
+
+The **_GAM-MAP_** uses **GAMs**, which extend linear regression and generalised linear models by allowing flexible, nonlinear relationships among variables. This makes **GAMs** useful for exploring how climate factors influence malaria cases.
+
+
+<div style="color:green; ">
+1. What is GAM?
+</div>
+A predictive modeling approach that balances interpretability with flexibility, capturing both linear and nonlinear effects.
+
+<div style="color:green; margin-top:10px;">
+2. Building the GAM
+</div>
+In the app, <b>GAMs</b> are constructed by selecting relevant predictors (such as climate variables) and their interactions, and by applying smoothing functions to capture long-term trends (time), seasonal cycles (months), and regional patterns.
+
+<div style="color:green; margin-top:10px;">
+3. GAM Equations and Conditional Distributions
+</div>
+The app provides a simplified view of the <b>GAM</b> formulation, showing how predictors combine with smooth terms to model the relationship between climate variables and uncomplicated malaria cases. For full mathematical details, see the accompanying manuscript.
+

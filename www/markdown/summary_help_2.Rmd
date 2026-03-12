@@ -1,0 +1,20 @@
+---
+title: "help_page_2"
+author: "Edward"
+date: "2025-03-04"
+output: html_document
+---
+
+<div style="color:green; ">
+Main Tabs:
+</div>
+
+- **Welcome**: Introduction and overview
+- **About**: Project objectives, study area map, and methodology
+- **Help**: This guide (you are here!)
+- **Analysis**: Main data exploration tools
+- **Appendix**: Additional plots and technical details
+- **Code**: Access GitHub repository
+
+
+---

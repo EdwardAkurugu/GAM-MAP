@@ -1,0 +1,23 @@
+---
+title: "help_page_5"
+author: "Edward"
+date: "2025-03-04"
+output: html_document
+---
+
+<div style="color:green; ">
+Exporting Plots:
+</div>
+
+- Use the download button or camera icon on interactive plots to download as PNG
+<!-- High-resolution TIFF files (600 DPI) are saved automatically -->
+
+
+<div style="color:green; ">
+Saving Your Work:
+</div>
+
+- Use your browser's bookmark feature to save the app URL
+<!-- - Export tables to Excel for further analysis -->
+
+---
