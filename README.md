@@ -1,14 +1,6 @@
 # GAM-MAP: GAM-Based Malaria Analytics Platform
 
 <p align="center">
-  <img src="www/images/logo_masha.png" alt="MASHA Logo" height="60"/>
-  &nbsp;&nbsp;
-  <img src="www/images/logo_uct.png" alt="UCT Logo" height="60"/>
-  &nbsp;&nbsp;
-  <img src="www/images/GHS_logo.jpg" alt="Ghana Health Service Logo" height="60"/>
-</p>
-
-<p align="center">
   <strong>Temporal and Climatic Analysis of Uncomplicated Malaria in Ghana</strong><br/>
   A Generalised Additive Model (GAM) framework for regional malaria epidemiology
 </p>
