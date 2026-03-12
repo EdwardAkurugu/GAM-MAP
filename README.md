@@ -91,7 +91,6 @@ Where:
 
 ### Model Selection
 Eight candidate models per region were fitted via backward elimination. Final models were selected using:
-- **Generalised Cross-Validation (GCV)** score
 - **Adjusted R²**
 - **Deviance Explained**
 
