@@ -1487,7 +1487,7 @@ server <- function(input, output, session) {
   })
   
   #============================================
-  # GAM MODEL DIAGNOSTICS
+  # GAM DIAGNOSTICS
   #============================================
   diag_models_reactive <- reactive({
     switch(input$diag_region,
@@ -2132,6 +2132,7 @@ server <- function(input, output, session) {
   )
   
 }
+
 
 
 
