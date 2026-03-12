@@ -478,7 +478,7 @@ server <- function(input, output, session) {
   
   
   #============================================
-  # REGIONAL GAM MODEL FITTING
+  # REGIONAL GAM FITTING
   #============================================
   
   # ---------- Fitting Upper East (UE) regional models ---------- 
@@ -1152,7 +1152,7 @@ server <- function(input, output, session) {
   
   
   #============================================
-  # REGIONAL GAM MODEL ESTIMATES
+  # REGIONAL GAM ESTIMATES
   #============================================
   observeEvent(input$model_region, {
     region <- input$model_region
@@ -1312,7 +1312,7 @@ server <- function(input, output, session) {
   })
   
   #============================================
-  # REGIONAL GAM MODEL PLOTS
+  # REGIONAL GAM PLOTS
   #============================================
   plot_models_reactive <- reactive({
     switch(input$plot_region,
@@ -2132,6 +2132,7 @@ server <- function(input, output, session) {
   )
   
 }
+
 
 
 
