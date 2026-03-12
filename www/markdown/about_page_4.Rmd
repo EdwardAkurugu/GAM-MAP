@@ -38,7 +38,7 @@ output: html_document
     <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;">
       • Load malaria data (2012-2023)<br>
       • Initialize climate variables<br>
-      • Prepare GAM models (80+ models)<br>
+      • Prepare GAM models (10 regions × 8 specifications = 80 models)<br>
       • Load Ghana region maps
     </p>
   </div>
@@ -88,3 +88,4 @@ output: html_document
   </div>
 
 </div>
+
