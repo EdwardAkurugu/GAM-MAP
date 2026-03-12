@@ -182,6 +182,19 @@ install.packages(c(
   "tidyverse"
 ))
 ```
+### Clone and Run
+
+```bash
+git clone https://github.com/EdwardAkurugu/GAM-MAP.git
+cd GAM-MAP
+```
+
+Then in R:
+
+```r
+shiny::runApp()
+```
+
 
 > **Note:** Pre-fitted model `.rds` files must be present in the working directory (or `models/` subfolder) before launching the app. The app loads all 80 regional model objects at startup. Fitting models from scratch requires access to the DHIMS2 and GMeT datasets, which are available upon request from NMEP and GMeT respectively.
 
