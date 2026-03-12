@@ -1,8 +1,8 @@
 # GAM-MAP: GAM-Based Malaria Analytics Platform
 
 <p align="center">
-  <strong>Temporal and Climatic Analysis of Uncomplicated Malaria in Ghana</strong><br/>
-  A Generalised Additive Model (GAM) framework for regional malaria epidemiology
+  <strong>Temporal and Climatic Drivers of Uncomplicated Malaria in Ghana</strong><br/>
+  A Regional Generalised Additive Model (GAM) Analysis
 </p>
 
 <p align="center">
