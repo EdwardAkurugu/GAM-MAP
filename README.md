@@ -50,7 +50,7 @@ Malaria remains endemic across all of Ghana and is influenced by diverse seasona
 | **Descriptives** | Annual and overall summary statistics for malaria and climate variables |
 | **Time Series** | STL decomposition (observed, trend, seasonal, remainder components) |
 | **Seasonality** | Monthly boxplots and formal tests of seasonality (Kruskal-Wallis, Friedman) |
-| **Model Estimates** | GAM model selection metrics (GCV, Adj. R², Deviance Explained) and coefficient tables |
+| **Model Estimates** | GAM model selection metrics (GCV, Adj. R², Deviance Explained) and smooth term coefficient tables |
 | **Model Diagnostics** | Observed vs. fitted plots, Q-Q plots, and response vs. fitted plots |
 | **Model Plots** | Partial effect smooth term plots for all covariates and interactions |
 | **Appendix** | Combined time series plots, heatmaps, seasonal bar-line patterns, and GAM framework |
