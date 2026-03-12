@@ -177,41 +177,6 @@ source("app/ui.R")
 # Run the Shiny application
 shinyApp(ui = ui, server = server)
 ```
-
-
-## Repository Structure
-
-```
-GAM-MAP/
-├── app.R                        # Main Shiny app entry point
-├── server.R                     # Server logic
-├── ui.R                         # UI definition
-├── dashboard_styles.R           # Custom CSS
-├── global.R                     # Global data loading and packages
-│
-├── models/                      # Pre-fitted RDS model objects
-│   ├── model_UE_1.rds ... model_UE_8.rds   # Upper East
-│   ├── model_UW_1.rds ... model_UW_8.rds   # Upper West
-│   ├── model_NO_1.rds ... model_NO_8.rds   # Northern
-│   ├── model_BA_1.rds ... model_BA_8.rds   # Brong Ahafo
-│   ├── model_AS_1.rds ... model_AS_8.rds   # Ashanti
-│   ├── model_EA_1.rds ... model_EA_8.rds   # Eastern
-│   ├── model_VO_1.rds ... model_VO_8.rds   # Volta
-│   ├── model_GA_1.rds ... model_GA_8.rds   # Greater Accra
-│   ├── model_CE_1.rds ... model_CE_8.rds   # Central
-│   └── model_WE_1.rds ... model_WE_8.rds   # Western
-│
-└── www/
-    ├── images/                  # Logos and figures
-    └── markdown/                # Help, About, and Welcome page content
-        ├── about_0.md
-        ├── about_page_*.Rmd
-        ├── welcome_page_*.Rmd
-        ├── help_page_*.Rmd
-        ├── summary_help_*.Rmd
-        └── gam model building.md
-```
-
 ---
 
 ## Installation & Running Locally
