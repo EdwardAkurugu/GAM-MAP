@@ -156,7 +156,7 @@ GAM-MAP/
 
 ### Prerequisites
 
-- R ≥ 4.2.0
+- R ≥ 4.5.2
 - RStudio (recommended)
 
 ### Required R Packages
