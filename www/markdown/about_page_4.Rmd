@@ -33,11 +33,11 @@ output: html_document
   <!-- Step 3 -->
   <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin: 15px 0; border-left: 5px solid #3498DB; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <h3 style="margin: 0; font-size: 18px; color: #3498DB;">
-      <i class="fa fa-cogs"></i> Step 3: Backend Initialization
+      <i class="fa fa-cogs"></i> Step 3: Backend Initialisation
     </h3>
     <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;">
       • Load malaria data (2012-2023)<br>
-      • Initialize climate variables<br>
+      • Initialise climate variables<br>
       • Prepare GAM models (10 regions × 8 specifications = 80 models)<br>
       • Load Ghana region maps
     </p>
@@ -81,7 +81,7 @@ output: html_document
     <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;">
       • Navigate between tabs<br>
       • Select regions and date ranges<br>
-      • View analysis and visualizations<br>
+      • View analysis and visualisations<br>
       • Explore model estimates and diagnostics<br>
       • Download results
     </p>
