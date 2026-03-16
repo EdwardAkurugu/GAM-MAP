@@ -287,7 +287,7 @@ This project is released under a **Creative Commons Attribution (CC BY 4.0)** li
 ## Acknowledgements
 
 - [Modelling and Simulation Hub, Africa (MASHA), University of Cape Town](https://masha.uct.ac.za)
-- [Clinton Health Access Initiative (CHAI)](https://www.clintonhealthaccess.org/south-africa/), South Africa
+- [Clinton Health Access Initiative (CHAI), South Africa](https://www.clintonhealthaccess.org/south-africa/)
 - [Southern African Development Community Elimination 8 (SADC E8)](https://sadce8.org/)
 - [Ghana Health Service — National Malaria Elimination Programme](https://ghs.gov.gh/)
 - [Ghana Meteorological Agency (GMeT)](https://www.meteo.gov.gh/)
