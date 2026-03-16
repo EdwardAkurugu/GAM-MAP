@@ -62,7 +62,7 @@ Malaria remains endemic across all of Ghana and is influenced by diverse seasona
 | Data | Source | Period |
 |------|--------|--------|
 | Uncomplicated malaria cases | District Health Information Management System II (DHIMS2), Ghana Health Service / National Malaria Elimination Programme (NMEP) | Jan 2012 – Dec 2023 |
-| Monthly rainfall (mm) | Ghana Meteorological Agency (GMeT) — 12 stations | Jan 2012 – Dec 2023 |
+| Rainfall (mm) | Ghana Meteorological Agency (GMeT) — 12 stations | Jan 2012 – Dec 2023 |
 | Min / Avg / Max temperature (°C) | Ghana Meteorological Agency (GMeT) — 12 stations | Jan 2012 – Dec 2023 |
 
 > **Note:** The six new regions created in 2019 (Western North, Ahafo, Bono East, Oti, Savannah, North East) were consolidated with their parent regions to maintain a consistent 2012–2023 time series across the ten former administrative regions.
