@@ -252,7 +252,7 @@ This work was supported, in whole or in part, by the **Bill & Melinda Gates Foun
 | Nana Yaw Peprah | National Malaria Elimination Programme, Ghana Health Service |
 | Wahjib Mohammed | National Malaria Elimination Programme, Ghana Health Service |
 | Paul Boateng | National Malaria Elimination Programme, Ghana Health Service |
-| Paul H.A.K. Abiwu | National Malaria Elimination Programme, Ghana Health Service |
+| Paul Hilarius Asiwome Kosi Abiwu | National Malaria Elimination Programme, Ghana Health Service |
 | Sheetal Prakash Silal | MASHA, UCT & Nuffield Dept. of Medicine, University of Oxford |
 
 📧 Corresponding author: [akredw001@myuct.ac.za](mailto:akredw001@myuct.ac.za) | [akuruguedward@gmail.com](mailto:akuruguedward@gmail.com) 
