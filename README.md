@@ -53,6 +53,7 @@ Malaria remains endemic across all of Ghana and is influenced by diverse seasona
 | **Model Estimates** | GAM model selection metrics (GCV, Adj. R², Deviance Explained) and smooth term coefficient tables |
 | **Model Diagnostics** | Observed vs. fitted plots, Q-Q plots, and response vs. fitted plots |
 | **Model Plots** | Partial effect smooth term plots for all covariates and interactions |
+| **Regional Summary** | Integrated view of regional malaria burden, climate drivers, and GAM outputs, including key findings, and evidence‑based insights for each region |
 | **Appendix** | Combined time series plots, heatmaps, seasonal bar-line patterns, and GAM framework |
 
 ---
