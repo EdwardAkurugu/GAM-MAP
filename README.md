@@ -126,7 +126,7 @@ GAM-MAP/
 ├── dashboard_styles.R           # Custom CSS
 ├── packages.R                   # Package dependencies
 ├── data.R                       # Data loading and preparation
-├── static plot function.R       # Static plot functions
+├── static_plot_function.R       # Static plot functions
 └── plot_themes.R                # Plot themes
 │
 ├── models/                      # Pre-fitted RDS model objects
@@ -161,7 +161,7 @@ source("packages.R")
 source("data.R")
 
 # Source static plot function
-source("static plot function.R")
+source("static_plot_function.R")
 
 # Source plotting themes
 source("plot_themes.R")
