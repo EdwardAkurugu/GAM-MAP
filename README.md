@@ -23,7 +23,7 @@
 > *Temporal and climatic drivers of uncomplicated malaria in Ghana: A Regional Generalised Additive Model analysis.*
 > PLOS ONE (under review), 2026.
 
-The platform enables users to explore regional malaria transmission dynamics across Ghana's ten former administrative regions (2012–2023), investigate relationships between meteorological variables and malaria caseloads, and interact with fitted GAM model outputs — all through an intuitive browser-based interface.
+The platform enables users to explore regional malaria case patterns across Ghana's ten former administrative regions (2012–2023), investigate relationships between meteorological variables and malaria cases, and interact with fitted GAM model outputs — all through an intuitive browser-based interface.
 
 ---
 
@@ -31,7 +31,7 @@ The platform enables users to explore regional malaria transmission dynamics acr
 
 Malaria remains endemic across all of Ghana and is influenced by diverse seasonal and climatic factors. This project applies Generalised Additive Models (GAMs) with a quasi-Poisson distribution to:
 
-- Capture **nonlinear** relationships between malaria and weather (rainfall, temperature)
+- Capture **nonlinear** relationships between malaria cases and weather (rainfall, temperature)
 - Decompose **long-term trend**, **seasonality**, and **temporal interactions**
 - Deliver **region-specific** insights across Ghana's three ecological zones:
   - **Guinea Savannah** (Upper East, Upper West, Northern) — unimodal malaria peak
@@ -47,7 +47,7 @@ Malaria remains endemic across all of Ghana and is influenced by diverse seasona
 | **Welcome** | Platform overview, objectives, and getting-started guide |
 | **About** | Study background, ecological zones map, and data sources |
 | **Help** | Navigation guide, tips, and contact information |
-| **Descriptives** | Annual and overall summary statistics for malaria and climate variables |
+| **Descriptives** | Annual and overall summary statistics for malaria cases and climate variables |
 | **Time Series** | STL decomposition (observed, trend, seasonal, remainder components) |
 | **Seasonality** | Monthly boxplots and formal tests of seasonality (Kruskal-Wallis, Friedman) |
 | **Model Estimates** | GAM model selection metrics (GCV, Adj. R², Deviance Explained) and smooth term coefficient tables |
