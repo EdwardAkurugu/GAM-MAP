@@ -23,7 +23,7 @@
 > *Temporal and climatic drivers of uncomplicated malaria in Ghana: A Regional Generalised Additive Model analysis.*
 > PLOS ONE (under review), 2026.
 
-The platform enables users to explore regional malaria case patterns across Ghana's ten former administrative regions (2012–2023), investigate relationships between meteorological variables and malaria cases, and interact with fitted GAM model outputs — all through an intuitive browser-based interface.
+The platform enables users to explore regional malaria case patterns across Ghana's ten former administrative regions (2012–2023), investigate nonlinear relationships between climate variables and malaria cases, and interact with fitted GAM model outputs — all through an intuitive browser-based interface.
 
 ---
 
@@ -31,7 +31,7 @@ The platform enables users to explore regional malaria case patterns across Ghan
 
 Malaria remains endemic across all of Ghana and is influenced by diverse seasonal and climatic factors. This project applies Generalised Additive Models (GAMs) with a quasi-Poisson distribution to:
 
-- Capture **nonlinear** relationships between malaria cases and weather (rainfall, temperature)
+- Capture **nonlinear** relationships between malaria cases and climate (rainfall, temperature) variables
 - Decompose **long-term trend**, **seasonality**, and **temporal interactions**
 - Deliver **region-specific** insights across Ghana's three ecological zones:
   - **Guinea Savannah** (Upper East, Upper West, Northern) — unimodal malaria peak
