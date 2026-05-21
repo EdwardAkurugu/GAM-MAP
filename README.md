@@ -13,7 +13,6 @@
           <img src="https://img.shields.io/badge/Period-2012--2023-purple" alt="Period"/>
             <img src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey" alt="License"/>
               </p>
----
 
 ## Overview
 
