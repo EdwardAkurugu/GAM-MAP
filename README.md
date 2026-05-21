@@ -1,4 +1,4 @@
-<img src="www/images/gammap_logo.svg" width="120" align="right" alt="GAM-MAP Logo"/>
+<img src="www/images/gam_map_logo.svg" width="120" align="right" alt="GAM-MAP Logo"/>
 
 # GAM-MAP: GAM-Based Malaria Analytics Platform
 
