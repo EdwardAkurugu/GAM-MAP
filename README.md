@@ -2,23 +2,17 @@
 
 # GAM-MAP: GAM-Based Malaria Analytics Platform
 
-<p>
+<p align="center">
   <strong>Temporal and Climatic Analysis of Uncomplicated Malaria in Ghana</strong><br/>
   A Generalised Additive Model (GAM) framework for regional malaria epidemiology
 </p>
-
-</td>
-</tr>
-</table>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/R-Shiny-blue?logo=r" alt="R Shiny"/>
-  <img src="https://img.shields.io/badge/Model-GAM%20%7C%20quasi--Poisson-brightgreen" alt="Model"/>
-  <img src="https://img.shields.io/badge/Regions-10%20Former%20Regions-orange" alt="Regions"/>
-  <img src="https://img.shields.io/badge/Period-2012--2023-purple" alt="Period"/>
-  <img src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey" alt="License"/>
-</p>
-
+  <p align="center">
+    <img src="https://img.shields.io/badge/R-Shiny-blue?logo=r" alt="R Shiny"/>
+      <img src="https://img.shields.io/badge/Model-GAM%20%7C%20quasi--Poisson-brightgreen" alt="Model"/>
+        <img src="https://img.shields.io/badge/Regions-10%20Former%20Regions-orange" alt="Regions"/>
+          <img src="https://img.shields.io/badge/Period-2012--2023-purple" alt="Period"/>
+            <img src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey" alt="License"/>
+              </p>
 ---
 
 ## Overview
