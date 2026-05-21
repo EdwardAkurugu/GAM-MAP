@@ -1,9 +1,20 @@
+<table>
+<tr>
+<td width="130" valign="middle">
+  <img src="www/images/gammap_logo.svg" width="120" alt="GAM-MAP Logo"/>
+</td>
+<td valign="middle">
+
 # GAM-MAP: GAM-Based Malaria Analytics Platform
 
-<p align="center">
+<p>
   <strong>Temporal and Climatic Analysis of Uncomplicated Malaria in Ghana</strong><br/>
   A Generalised Additive Model (GAM) framework for regional malaria epidemiology
 </p>
+
+</td>
+</tr>
+</table>
 
 <p align="center">
   <img src="https://img.shields.io/badge/R-Shiny-blue?logo=r" alt="R Shiny"/>
