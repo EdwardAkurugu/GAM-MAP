@@ -1,9 +1,4 @@
-<table>
-<tr>
-<td width="130" valign="middle">
-  <img src="www/images/gammap_logo.svg" width="120" alt="GAM-MAP Logo"/>
-</td>
-<td valign="middle">
+<img src="www/images/gammap_logo.svg" width="120" align="right" alt="GAM-MAP Logo"/>
 
 # GAM-MAP: GAM-Based Malaria Analytics Platform
 
