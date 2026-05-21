@@ -127,8 +127,7 @@ GAM-MAP/
 ├── packages.R                   # Package dependencies
 ├── data.R                       # Data loading and preparation
 ├── static_plot_function.R       # Static plot functions
-└── plot_themes.R                # Plot themes
-│
+├── plot_themes.R                # Plot themes
 ├── models/                      # Pre-fitted RDS model objects
 │   ├── model_UE_1.rds ... model_UE_8.rds   # Upper East
 │   ├── model_UW_1.rds ... model_UW_8.rds   # Upper West
@@ -154,28 +153,13 @@ GAM-MAP/
 
 **`app.R`**
 ```r
-# Source packages
 source("packages.R")
-
-# Source the data file
 source("data.R")
-
-# Source static plot function
 source("static_plot_function.R")
-
-# Source plotting themes
 source("plot_themes.R")
-
-# Source custom CSS
 source("dashboard_styles.R")
-
-# Source the server file
 source("app/server.R")
-
-# Source the UI file
 source("app/ui.R")
-
-# Run the Shiny application
 shinyApp(ui = ui, server = server)
 ```
 ---
@@ -191,23 +175,9 @@ shinyApp(ui = ui, server = server)
 
 ```r
 install.packages(c(
-  "shiny",
-  "sf",
-  "shinydashboard",
-  "shinyjs",
-  "shinyBS",
-  "DT",
-  "plotly",
-  "ggplot2",
-  "dplyr",
-  "tidyr",
-  "lubridate",
-  "mgcv",
-  "gratia",
-  "gridExtra",
-  "markdown",
-  "htmltools",
-  "tidyverse"
+  "shiny", "sf", "shinydashboard", "shinyjs", "shinyBS",
+  "DT", "plotly", "ggplot2", "dplyr", "tidyr", "lubridate",
+  "mgcv", "gratia", "gridExtra", "markdown", "htmltools", "tidyverse"
 ))
 ```
 ### Clone and Run
