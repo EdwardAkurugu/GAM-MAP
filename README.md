@@ -95,66 +95,72 @@ where:
 Eight candidate model specifications per region — each omitting a different smooth term or interaction — were fitted via REML. The best-fitting model was selected as the one maximising the **product of Adjusted R² and Deviance Explained**.
 
 ### GAMM Extension
-For regions where the best GAM's deviance residuals showed significant serial autocorrelation (Ljung-Box test, lags 12–60 months), a Generalised Additive Mixed Model (GAMM) was fitted on the same smoother, adding a **corARMA(p,q)** correlation structure. A grid of `p, q` combinations was searched, models were fitted via Penalised Quasi-Likelihood (PQL) with the negative binomial (\(\theta\)) held fixed from the best GAM in that region, and the best-converged structure was selected by lowest AIC of the linear mixed-effects (`lme`) component.
+For regions where the best GAM's deviance residuals showed significant serial autocorrelation (Ljung-Box test, lags 12–60 months), a Generalised Additive Mixed Model (GAMM) was fitted on the same smoother, adding a **corARMA(p,q)** correlation structure. A grid of `p, q` combinations was searched, models were fitted via Penalised Quasi-Likelihood (PQL) with the negative binomial (θ) held fixed from the best GAM in that region, and the best-converged structure was selected by lowest AIC of the linear mixed-effects (`lme`) component.
 
+## Software
+All GAMs and GAMMs were fitted using the [`mgcv`](https://cran.r-project.org/package=mgcv) and [`nlme`](https://cran.r-project.org/package=nlme) packages in **R version 4.6.1**.
 
-### Software
-All models were fitted using the [`mgcv`](https://cran.r-project.org/package=mgcv) package in **R version 4.5.2**.
+---
+
+## Key Results Summary — Best Selected Model per Region
+
+| Region | Ecological Zone | Model Type | Structure | Adj. R² |
+|--------|-----------------|------------|-----------|---------|
+| Upper East | Guinea Savannah | GAMM | corARMA(1, 0) | 90.00% |
+| Upper West | Guinea Savannah | GAMM | corARMA(0, 1) | 84.80% |
+| Northern | Guinea Savannah | GAM | Model 5 | 93.63% |
+| Brong Ahafo | Transitional Forest | GAMM | corARMA(0, 1) | 87.40% |
+| Ashanti | Transitional Forest | GAMM | corARMA(1, 1) | 81.80% |
+| Eastern | Transitional Forest | GAMM | corARMA(1, 1) | 77.50% |
+| Volta | Transitional Forest | GAMM | corARMA(3, 3) | 82.10% |
+| Greater Accra | Coastal | GAMM | corARMA(1, 0) | 39.70% |
+| Central | Coastal | GAMM | corARMA(2, 1) | 82.40% |
+| Western | Coastal | GAMM | corARMA(1, 0) | 86.00% |
+
+*Adj. R² for GAMM rows is that of the underlying GAM component (PQL-based); Northern is the only region where the standalone GAM cleared the Ljung-Box residual-autocorrelation test at every lag and did not require a corARMA correction.*
 
 ---
 
-## Key Results Summary
-
-| Region | Ecological Zone | Selected Model | GCV | Adj. R² | Dev. Explained |
-|--------|----------------|---------------|-----|---------|----------------|
-| Upper East | Guinea Savannah | Model 1 | 801.31 | 94.9% | 96.5% |
-| Upper West | Guinea Savannah | Model 4 | 771.04 | 90.8% | 93.7% |
-| Northern | Guinea Savannah | Model 1 | 654.10 | 95.2% | 96.1% |
-| Brong Ahafo | Transitional Forest | Model 5 | 883.81 | 91.9% | 94.6% |
-| Ashanti | Transitional Forest | Model 1 | 472.40 | 92.9% | 95.5% |
-| Eastern | Transitional Forest | Model 1 | 606.18 | 91.9% | 95.5% |
-| Volta | Transitional Forest | Model 1 | 510.48 | 92.0% | 94.8% |
-| Greater Accra | Coastal | Model 4 | 306.91 | 68.0% | 76.9% |
-| Central | Coastal | Model 1 | 508.03 | 90.0% | 93.6% |
-| Western | Coastal | Model 1 | 566.42 | 92.7% | 95.0% |
-
----
 ## Repository Structure
 ```
-GAM-MAP/
-├── app.R                        # Main entry point: loads dependencies, sources all files, runs app
+GAM(M)-MAP/
+├── app.R                                             # Main entry point: loads dependencies, sources all files, runs app
 ├── app/
-│   ├── server.R                 # Server logic
-│   └── ui.R                     # UI definition
-├── dashboard_styles.R           # Custom CSS
-├── packages.R                   # Package dependencies
-├── data.R                       # Data loading and preparation
-├── static_plot_function.R       # Static plot functions
-├── plot_themes.R                # Plot themes
-├── models/                      # Pre-fitted RDS model objects
-│   ├── model_UE_1.rds ... model_UE_8.rds   # Upper East
-│   ├── model_UW_1.rds ... model_UW_8.rds   # Upper West
-│   ├── model_NO_1.rds ... model_NO_8.rds   # Northern
-│   ├── model_BA_1.rds ... model_BA_8.rds   # Brong Ahafo
-│   ├── model_AS_1.rds ... model_AS_8.rds   # Ashanti
-│   ├── model_EA_1.rds ... model_EA_8.rds   # Eastern
-│   ├── model_VO_1.rds ... model_VO_8.rds   # Volta
-│   ├── model_GA_1.rds ... model_GA_8.rds   # Greater Accra
-│   ├── model_CE_1.rds ... model_CE_8.rds   # Central
-│   └── model_WE_1.rds ... model_WE_8.rds   # Western
+│ ├── server.R                                        # Server logic
+│ └── ui.R                                            # UI definition
+├── dashboard_styles.R                                # Custom CSS
+├── packages.R                                        # Package dependencies
+├── data.R                                            # Data loading and preparation
+├── static_plot_function.R                            # Static plot functions
+├── plot_themes.R                                     # Plot themes
+├── models/                                           # Pre-fitted RDS model objects
+│ ├── model_UE_1.rds ... model_UE_8.rds               # Upper East
+│ ├── model_UW_1.rds ... model_UW_8.rds               # Upper West
+│ ├── model_NO_1.rds ... model_NO_8.rds               # Northern
+│ ├── model_BA_1.rds ... model_BA_8.rds               # Brong Ahafo
+│ ├── model_AS_1.rds ... model_AS_8.rds               # Ashanti
+│ ├── model_EA_1.rds ... model_EA_8.rds               # Eastern
+│ ├── model_VO_1.rds ... model_VO_8.rds               # Volta
+│ ├── model_GA_1.rds ... model_GA_8.rds               # Greater Accra
+│ ├── model_CE_1.rds ... model_CE_8.rds               # Central
+│ ├── model_WE_1.rds ... model_WE_8.rds               # Western
+│ ├── model_gamm.rds                                  # Best GAMM per region (9 regions, excluding Northern)
+│ ├── modelgamm_meta.rds                              # GAMM metadata (corARMA label, phi, theta, Ljung-Box)
+│ └── gamm_corarma_grid_comparison.csv                # Full corARMA(p,q) grid search results per region
 │
 └── www/
-    ├── images/                  # Logos and figures
-    └── markdown/                # Help, About, and Welcome page content
-        ├── about_0.md
-        ├── about_page_*.Rmd
-        ├── welcome_page_*.Rmd
-        ├── help_page_*.Rmd
-        ├── summary_help_*.Rmd
-        └── gam model building.md
+├── images/                                           # Logos and figures
+└── markdown/                                         # Help, About, and Welcome page content
+├── about_page_.Rmd
+├── welcome_page_.Rmd
+├── help_page_.Rmd
+├── summary_help_*.Rmd
+└── gam(m)_model_building.md
+
 ```
 
 **`app.R`**
+
 ```r
 source("packages.R")
 source("data.R")
@@ -164,24 +170,29 @@ source("dashboard_styles.R")
 source("app/server.R")
 source("app/ui.R")
 shinyApp(ui = ui, server = server)
+
 ```
+> `server.R` must be sourced before `ui.R` — `ui.R` references `gam_regions` and `gamm_regions`, which are defined at the top level of `server.R`, directly at UI-build time.
+
 ---
 
 ## Installation & Running Locally
 
 ### Prerequisites
 
-- R ≥ 4.5.2
+- R ≥ 4.6.1
 - RStudio (recommended)
 
 ### Required R Packages
 
 ```r
 install.packages(c(
-  "shiny", "sf", "shinydashboard", "shinyjs", "shinyBS",
-  "DT", "plotly", "ggplot2", "dplyr", "tidyr", "lubridate",
-  "mgcv", "gratia", "gridExtra", "markdown", "htmltools", "tidyverse"
+  "shiny", "shinydashboard", "shinyjs", "shinyBS", "shinycssloaders",
+  "DT", "plotly", "sf", "leaflet",
+  "mgcv", "gratia", "gridExtra", "markdown", "htmltools",
+  "nlme", "MASS", "gt", "reshape2", "readxl"
 ))
+
 ```
 ### Clone and Run
 
