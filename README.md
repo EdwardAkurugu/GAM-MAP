@@ -15,13 +15,13 @@
 
 ## Overview
 
-**GAM-MAP** is an interactive R Shiny dashboard built to accompany the research article:
+**GAM(M)-MAP** is an interactive R Shiny dashboard built to accompany the research article:
 
 > **Akurugu E., Awine T., Seidu B., Peprah N.Y., Mohammed W., Boateng P., Abiwu P.H.A.K., Silal S.P.**
-> *Temporal and climatic drivers of uncomplicated malaria in Ghana: A Regional Generalised Additive Model analysis.*
+> *Temporal and climatic drivers of uncomplicated malaria in Ghana: A Regional Generalised Additive Model (GAM) and Generalised Additive Mixed Model (GAMM) analysis.*
 > PLOS ONE (under review), 2026.
 
-The platform enables users to explore regional malaria case patterns across Ghana's ten former administrative regions (2012–2023), investigate nonlinear relationships between climate variables and malaria cases, and interact with fitted GAM model outputs — all through an intuitive browser-based interface.
+The platform enables users to explore regional malaria case patterns across Ghana's ten former administrative regions (2012–2023), investigate nonlinear relationships between climate variables and malaria, and interact with fitted GAM and GAMM model outputs — all through an intuitive browser-based interface.
 
 ---
 
