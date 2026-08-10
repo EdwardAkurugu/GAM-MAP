@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>Temporal and Climatic Analysis of Uncomplicated Malaria in Ghana</strong><br/>
-  A Generalised Additive Model (GAM) framework for regional malaria epidemiology
+  A Generalised Additive Model (GAM) and Generalised Additive Mixed Model (GAMM) framework for regional malaria epidemiology
 </p>
 
 <p align="center">
