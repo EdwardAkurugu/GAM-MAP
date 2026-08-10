@@ -1,4 +1,4 @@
-# GAM-MAP: GAM-Based Malaria Analytics Platform
+# GAM(M)-MAP: GAM(M)-Based Malaria Analytics Platform
 
 <p align="center">
   <strong>Temporal and Climatic Analysis of Uncomplicated Malaria in Ghana</strong><br/>
