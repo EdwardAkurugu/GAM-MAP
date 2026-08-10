@@ -26,7 +26,7 @@ The platform enables users to explore regional malaria case patterns across Ghan
 ---
 
 ## Background
-Malaria remains endemic across all of Ghana and is influenced by diverse seasonal and climatic factors. This project applies GAMs and GAMMs, fitted with a negative binomial distribution, to:
+Malaria remains endemic across all of Ghana and is influenced by diverse seasonal and climatic factors. This project applies GAMs and GAMMs, fitted with a negative binomial distribution to:
 - Capture **nonlinear** relationships between malaria cases and climate (rainfall, temperature) variables
 - Decompose **long-term trend**, **seasonality**, and **temporal interactions**
 - Correct for **residual serial autocorrelation** where present, using corARMA(p,q) correlation structures within a GAMM framework
@@ -38,23 +38,27 @@ Malaria remains endemic across all of Ghana and is influenced by diverse seasona
 ---
 
 ## Features
-
 | Tab | Description |
 |-----|-------------|
 | **Welcome** | Platform overview, objectives, and getting-started guide |
 | **About** | Study background, ecological zones map, and data sources |
 | **Help** | Navigation guide, tips, and contact information |
-| **Descriptives** | Annual and overall summary statistics for malaria cases and climate variables |
+| **Model Validity** | Per-region GAM vs. GAMM recommendation summary (Ljung-Box residual autocorrelation), concurvity diagnostics, and seasonal smooth-term justification for both GAM and GAMM |
+| **Descriptives** | Annual and overall summary statistics for malaria cases and climate variables, plus correlation analysis |
 | **Time Series** | STL decomposition (observed, trend, seasonal, remainder components) |
 | **Seasonality** | Monthly boxplots and formal tests of seasonality (Kruskal-Wallis, Friedman) |
-| **Model Estimates** | GAM model selection metrics (GCV, Adj. R², Deviance Explained) and smooth term coefficient tables |
-| **Model Diagnostics** | Observed vs. fitted plots, Q-Q plots, and response vs. fitted plots |
-| **Model Plots** | Partial effect smooth term plots for all covariates and interactions |
-| **Regional Summary** | Integrated view of regional malaria burden, climate drivers, and GAM outputs, including key findings, and evidence‑based insights for each region |
-| **Appendix** | Combined time series plots, heatmaps, seasonal bar-line patterns, and GAM framework |
+| **GAM Estimates** | GAM model selection metrics (REML score, Adj. R², Deviance Explained), smooth term coefficient tables, and forecast plots/tables |
+| **GAM Diagnostics** | Observed vs. fitted, Q-Q, response vs. fitted plots, and residual autocorrelation (ACF/PACF, Ljung-Box) |
+| **GAM Plots** | Partial effect smooth term plots for all covariates and interactions |
+| **GAM Regional Summary** | Integrated view of regional malaria burden, climate drivers, and GAM outputs, including key findings, evidence‑based insights, an interactive incidence map, and region-to-region comparisons |
+| **GAMM Estimates** | corARMA(p,q) correlation-structure model comparison, smooth term and correlation coefficient tables, and forecast plots/tables |
+| **GAMM Diagnostics** | Observed vs. fitted, Q-Q, response vs. fitted plots, and residual autocorrelation on normalised residuals |
+| **GAMM Plots** | Partial effect smooth term plots from the GAMM's underlying GAM component |
+| **GAMM Regional Summary** | Incidence-adjusted regional summary (population-offset corrected) using the corARMA-corrected GAMM |
+| **Appendix** | Combined time series plots, heatmaps, seasonal bar-line patterns, and the GAM & GAMM modeling framework |
+| **Source Code** | Direct link to the project's GitHub repository |
 
 ---
-
 ## Data Sources
 
 | Data | Source | Period |
