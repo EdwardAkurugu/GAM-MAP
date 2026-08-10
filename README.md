@@ -26,11 +26,10 @@ The platform enables users to explore regional malaria case patterns across Ghan
 ---
 
 ## Background
-
-Malaria remains endemic across all of Ghana and is influenced by diverse seasonal and climatic factors. This project applies Generalised Additive Models (GAMs) with a quasi-Poisson distribution to:
-
+Malaria remains endemic across all of Ghana and is influenced by diverse seasonal and climatic factors. This project applies GAMs and GAMMs, fitted with a negative binomial distribution, to:
 - Capture **nonlinear** relationships between malaria cases and climate (rainfall, temperature) variables
 - Decompose **long-term trend**, **seasonality**, and **temporal interactions**
+- Correct for **residual serial autocorrelation** where present, using corARMA(p,q) correlation structures within a GAMM framework
 - Deliver **region-specific** insights across Ghana's three ecological zones:
   - **Guinea Savannah** (Upper East, Upper West, Northern) — unimodal malaria peak
   - **Transitional Forest** (Brong Ahafo, Ashanti, Eastern, Volta) — bimodal malaria peaks
