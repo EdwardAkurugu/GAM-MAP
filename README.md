@@ -223,7 +223,7 @@ Data access was granted by Ghana's National Malaria Elimination Programme (NMEP)
 
 ## Funding
 
-This work was supported, in whole or in part, by the **Bill & Melinda Gates Foundation** [Grant number: INV047-048] and the **Malaria Modelling and Analytics: Leader in Africa (MMALA)** project through the Modelling and Simulation Hub, Africa (MASHA), University of Cape Town.
+This work was supported by the **Bill & Melinda Gates Foundation** [Grant number: INV047‑048]. The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
 
 ---
 
@@ -254,7 +254,7 @@ If you use this platform or the associated analysis in your work, please cite:
              Peprah, Nana Yaw and Mohammed, Wahjib and Boateng, Paul and
              Abiwu, Paul Hilarius Asiwome Kosi and Silal, Sheetal Prakash},
   title   = {Temporal and climatic drivers of uncomplicated malaria in Ghana:
-             A Regional Generalised Additive Model analysis},
+             A Regional Generalised Additive Model and Generalised Additive Mixed Model analysis},
   journal = {PLOS ONE},
   year    = {2026},
   note    = {Under review}
@@ -265,7 +265,7 @@ If you use this platform or the associated analysis in your work, please cite:
 
 ## License
 
-This project is released under a **Creative Commons Attribution (CC BY 4.0)** licence, as required by the Bill & Melinda Gates Foundation grant conditions.
+This project is released under a **MIT License** licence.
 
 ---
 
