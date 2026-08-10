@@ -123,7 +123,7 @@ All GAMs and GAMMs were fitted using the [`mgcv`](https://cran.r-project.org/pac
 
 ## Repository Structure
 ```
-GAM(M)-MAP/
+GAMM-MAP/
 ├── app.R                                             # Main entry point: loads dependencies, sources all files, runs app
 ├── app/
 │ ├── server.R                                        # Server logic
@@ -197,8 +197,8 @@ install.packages(c(
 ### Clone and Run
 
 ```bash
-git clone https://github.com/EdwardAkurugu/GAM-MAP.git
-cd GAM-MAP
+git clone https://github.com/EdwardAkurugu/GAMM-MAP.git
+cd GAMM-MAP
 ```
 
 Then in R:
