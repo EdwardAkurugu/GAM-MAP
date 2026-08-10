@@ -74,16 +74,16 @@ Malaria remains endemic across all of Ghana and is influenced by diverse seasona
 ## Statistical Methods
 
 ### Model Family
-All regional GAMs use a **quasi-Poisson** distribution with a **log-link function** to handle overdispersion in monthly malaria count data.
+All regional GAMs use a **negative binomial** distribution with a **log-link function** to handle overdispersion in monthly malaria count data. Each model includes a population offset, `offset(log_pop_offset)`, so that predictors are modeled against malaria *incidence* relative to the local population rather than raw case counts.
 
 ### Full Model Structure
 
 ```
-uncom ~ s(time) + s(months) + s(rainfall) + s(avgtemp) +
+uncom ~ offset(log_pop_offset) + s(time) + s(months) + s(rainfall) + s(avgtemp) +
         ti(time, months) + ti(avgtemp, rainfall)
 ```
-
-Where:
+where:
+- `offset(log_pop_offset)` — population offset, converting the response to a case-rate model
 - `s(time)` — long-term trend (nonlinear)
 - `s(months)` — seasonality (cyclic)
 - `s(rainfall)` — nonlinear effect of monthly rainfall
@@ -92,9 +92,11 @@ Where:
 - `ti(avgtemp, rainfall)` — tensor product interaction (temperature × rainfall)
 
 ### Model Selection
-Eight candidate models per region were fitted via backward elimination. Final models were selected using:
-- **Adjusted R²**
-- **Deviance Explained**
+Eight candidate model specifications per region — each omitting a different smooth term or interaction — were fitted via REML. The best-fitting model was selected as the one maximising the **product of Adjusted R² and Deviance Explained**.
+
+### GAMM Extension
+For regions where the best GAM's deviance residuals showed significant serial autocorrelation (Ljung-Box test, lags 12–60 months), a Generalised Additive Mixed Model (GAMM) was fitted on the same smoother, adding a **corARMA(p,q)** correlation structure. A grid of `p, q` combinations was searched, models were fitted via Penalised Quasi-Likelihood (PQL) with the negative binomial (\(\theta\)) held fixed from the best GAM in that region, and the best-converged structure was selected by lowest AIC of the linear mixed-effects (`lme`) component.
+
 
 ### Software
 All models were fitted using the [`mgcv`](https://cran.r-project.org/package=mgcv) package in **R version 4.5.2**.
