@@ -126,15 +126,35 @@ All GAMs and GAMMs were fitted using the [`mgcv`](https://cran.r-project.org/pac
 GAMM-MAP/
 ├── app.R                                             # Main entry point: loads dependencies, sources all files, runs app
 ├── app/
-│ ├── server.R                                        # Server logic
+│ ├── server.R                                        # Server logic (runtime only — reads .rds via safe_readRDS(), never fits models)
 │ └── ui.R                                            # UI definition
 ├── dashboard_styles.R                                # Custom CSS
 ├── packages.R                                        # Package dependencies
 ├── data.R                                            # Data loading and preparation
 ├── static_plot_function.R                            # Static plot functions
 ├── plot_themes.R                                     # Plot themes
-├── models/                                           # Pre-fitted RDS model objects
-│ ├── model_UE_1.rds ... model_UE_8.rds               # Upper East
+├── models/
+│ ├── helpers.R                                       # Shared helpers/lookups (pfx_lookup, k_time_lookup, get_term_units,
+│ │                                                   #   drop_seasonal_unit, worst_concurvity_..., get_best_model,
+│ │                                                   #   format_corarma_label, build_model_status_table,
+│ │                                                   #   reset_tab_filters, get_population_series, etc.)
+│ │                                                   #   Sourced by gam.R, gamm.R, gam_seasonal_smooth.R,
+│ │                                                   #   gamm_seasonal_smooth.R, AND app/server.R — single source of truth.
+│ │
+│ ├── gam.R                                           # OFFLINE: fits 8 candidate NB-GAMs per region (source helpers.R first)
+│ │                                                   #   → writes model_<PFX>_1.rds ... model_<PFX>_8.rds
+│ ├── gamm.R                                          # OFFLINE: fits corARMA(p,q) grid per region, selects best by AIC
+│ │                                                   #   → writes model_<PFX>_gamm.rds, model_<PFX>_gamm_meta.rds,
+│ │                                                   #     gamm_corarma_grid_comparison_<PFX>.csv
+│ ├── gam_seasonal_smooth.R                           # OFFLINE: precomputes "no s(months)" GAM comparison stats
+│ │                                                   #   (requires model_<PFX>_1..8.rds from gam.R)
+│ │                                                   #   → writes model_<PFX>_gam_noseason_stats.rds
+│ ├── gamm_seasonal_smooth.R                          # OFFLINE: precomputes "no s(months)" GAMM comparison stats
+│ │                                                   #   (requires model_<PFX>_gamm.rds / _gamm_meta.rds from gamm.R)
+│ │                                                   #   → writes model_<PFX>_gamm_noseason_stats.rds
+│ │
+│ │   # ---- Generated .rds/.csv outputs (produced by the four scripts above; read at runtime by app/server.R) ----
+│ ├── model_UE_1.rds ... model_UE_8.rds               # Upper East — 8 candidate GAMs
 │ ├── model_UW_1.rds ... model_UW_8.rds               # Upper West
 │ ├── model_NO_1.rds ... model_NO_8.rds               # Northern
 │ ├── model_BA_1.rds ... model_BA_8.rds               # Brong Ahafo
@@ -144,9 +164,13 @@ GAMM-MAP/
 │ ├── model_GA_1.rds ... model_GA_8.rds               # Greater Accra
 │ ├── model_CE_1.rds ... model_CE_8.rds               # Central
 │ ├── model_WE_1.rds ... model_WE_8.rds               # Western
-│ ├── model_gamm.rds                                  # Best GAMM per region (9 regions, excluding Northern)
-│ ├── modelgamm_meta.rds                              # GAMM metadata (corARMA label, phi, theta, Ljung-Box)
-│ └── gamm_corarma_grid_comparison.csv                # Full corARMA(p,q) grid search results per region
+│ │
+│ ├── model_<PFX>_gamm.rds                            # Best GAMM per region (9 regions, excludes Northern)
+│ ├── model_<PFX>_gamm_meta.rds                       # GAMM metadata (corARMA label, phi, theta, Ljung-Box)
+│ ├── gamm_corarma_grid_comparison_<PFX>.csv          # Full corARMA(p,q) grid search results per region
+│ │
+│ ├── model_NO_gam_noseason_stats.rds                 # GAM  "no s(months)" comparison stats (Northern only — gam_regions)
+│ └── model_<PFX>_gamm_noseason_stats.rds             # GAMM "no s(months)" comparison stats (9 regions — gamm_regions)
 │
 └── www/
 ├── images/                                           # Logos and figures
