@@ -289,7 +289,7 @@ If you use this platform or the associated analysis in your work, please cite:
 
 ## License
 
-This project is released under a **MIT License** licence.
+This project is released under the **MIT License** licence.
 
 ---
 
