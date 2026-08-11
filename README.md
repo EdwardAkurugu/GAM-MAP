@@ -44,13 +44,13 @@ Malaria remains endemic across all of Ghana and is influenced by diverse seasona
 | **About** | Study background, ecological zones map, and data sources |
 | **Help** | Navigation guide, tips, and contact information |
 | **Model Validity** | Per-region GAM vs. GAMM recommendation summary (Ljung-Box residual autocorrelation), concurvity diagnostics, and seasonal smooth-term justification for both GAM and GAMM |
-| **Descriptives** | Annual and overall summary statistics for malaria cases and climate variables, plus correlation analysis |
+| **Descriptives** | Annual and overall summary statistics for malaria cases and climate variables, correlation analysis, interactive incidence map, and region-to-region comparisons |
 | **Time Series** | STL decomposition (observed, trend, seasonal, remainder components) |
 | **Seasonality** | Monthly boxplots and formal tests of seasonality (Kruskal-Wallis, Friedman) |
 | **GAM Estimates** | GAM model selection metrics (REML score, Adj. R², Deviance Explained), smooth term coefficient tables, and forecast plots/tables |
 | **GAM Diagnostics** | Observed vs. fitted, Q-Q, response vs. fitted plots, and residual autocorrelation (ACF/PACF, Ljung-Box) |
 | **GAM Plots** | Partial effect smooth term plots for all covariates and interactions |
-| **GAM Regional Summary** | Integrated view of regional malaria burden, climate drivers, and GAM outputs, including key findings, evidence‑based insights, an interactive incidence map, and region-to-region comparisons |
+| **GAM Regional Summary** | Integrated view of regional malaria burden, climate drivers, and GAM outputs, including key findings, and evidence‑based insights,  |
 | **GAMM Estimates** | corARMA(p,q) correlation-structure model comparison, smooth term and correlation coefficient tables, and forecast plots/tables |
 | **GAMM Diagnostics** | Observed vs. fitted, Q-Q, response vs. fitted plots, and residual autocorrelation on normalised residuals |
 | **GAMM Plots** | Partial effect smooth term plots from the GAMM's underlying GAM component |
