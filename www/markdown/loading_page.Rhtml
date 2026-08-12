@@ -1,0 +1,336 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  .gam-loader{
+    width:100%;
+    min-height:auto;
+    padding:40px 20px 50px;
+    background:
+      radial-gradient(circle at top left,rgba(46,134,171,0.10),transparent 30%),
+      radial-gradient(circle at bottom right,rgba(162,59,114,0.10),transparent 35%),
+      linear-gradient(145deg,#0d1b2a 0%,#162232 45%,#1b1430 100%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-family:'Inter',sans-serif;
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    backdrop-filter:blur(8px);
+  }
+
+  .bg-curves{position:absolute;inset:0;pointer-events:none;}
+
+  .seq-item{opacity:0;transform:translateY(22px);animation:revealUp 0.8s cubic-bezier(.2,.8,.2,1) forwards;}
+  .delay-1{animation-delay:0.01s;} .delay-2{animation-delay:0.10s;}
+  .delay-3{animation-delay:0.20s;} .delay-4{animation-delay:0.30s;}
+  .delay-5{animation-delay:0.40s;} .delay-6{animation-delay:0.50s;}
+  .delay-7{animation-delay:0.60s;} .delay-8{animation-delay:0.70s;}
+  .delay-9{animation-delay:0.80s;}
+
+  @keyframes revealUp{
+    0%{opacity:0;transform:translateY(22px) scale(0.98);filter:blur(6px);}
+    100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+  }
+
+  .gam-logo-wrap{
+    position:relative;z-index:10;
+    display:flex;flex-direction:column;
+    align-items:center;gap:14px;
+  }
+
+  .logo-svg-badge{
+    width:140px;height:140px;
+    filter:drop-shadow(0 0 18px rgba(46,134,171,0.35));
+    animation:corePulse 4s ease-in-out infinite;
+  }
+  @keyframes corePulse{0%,100%{transform:scale(1);}50%{transform:scale(1.04);}}
+
+  .brand-logos-row{
+    display:flex;align-items:center;justify-content:center;
+    gap:18px;margin-bottom:4px;
+  }
+  .brand-logo-img{
+    height:100px;width:auto;object-fit:contain;
+    opacity:0.82;
+    filter:brightness(1.05) drop-shadow(0 1px 4px rgba(0,0,0,0.35));
+    transition:opacity 0.2s;
+  }
+  .brand-logo-img:hover{opacity:1;}
+  .brand-sep{width:1px;height:28px;background:rgba(255,255,255,0.15);}
+
+  .divider-line{
+    width:420px;height:1.5px;
+    background:linear-gradient(90deg,transparent,rgba(46,134,171,0.9),rgba(162,59,114,0.95),transparent);
+    box-shadow:0 0 18px rgba(46,134,171,0.3);
+  }
+
+  .logo-title{
+    font-size:34px;font-weight:700;
+    letter-spacing:4px;color:#ffffff;
+    text-transform:uppercase;
+  }
+  .logo-title span{
+    background:linear-gradient(90deg,#5cbce0,#d07aaa);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+
+  .logo-subtitle{
+    font-size:14px;font-weight:300;
+    letter-spacing:1.6px;color:rgba(255,255,255,0.62);
+    text-transform:uppercase;text-align:center;
+    max-width:500px;line-height:1.7;
+  }
+
+  .tag-pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .pill{
+    padding:5px 12px;border-radius:999px;font-size:10px;
+    font-weight:600;letter-spacing:0.8px;text-transform:uppercase;
+    border:1px solid;backdrop-filter:blur(6px);
+    background:rgba(255,255,255,0.03);
+  }
+  .pill-blue{color:#72cceb;border-color:rgba(114,204,235,0.35);}
+  .pill-pink{color:#d88ab5;border-color:rgba(216,138,181,0.35);}
+  .pill-teal{color:#72d8b4;border-color:rgba(114,216,180,0.35);}
+
+  .loader-bar-wrap{
+    width:240px;height:4px;
+    background:rgba(255,255,255,0.08);
+    border-radius:999px;overflow:hidden;margin-top:4px;
+  }
+  .loader-bar{
+    height:100%;width:0%;border-radius:999px;
+    background:linear-gradient(90deg,#2E86AB,#A23B72);
+    box-shadow:0 0 15px rgba(46,134,171,0.5);
+    animation:barLoad 3s ease-in-out forwards;
+  }
+  @keyframes barLoad{
+    0%{width:0%;}25%{width:30%;}50%{width:58%;}75%{width:82%;}100%{width:100%;}
+  }
+
+  .loader-status{
+    font-size:12px;font-weight:400;
+    color:rgba(255,255,255,0.48);
+    letter-spacing:0.6px;margin-top:4px;
+  }
+
+  .curve-line{stroke-dasharray:1400;stroke-dashoffset:1400;animation:drawCurve 3.2s ease-in-out forwards;}
+  .curve-line-2{stroke-dasharray:1200;stroke-dashoffset:1200;animation:drawCurve 3.2s ease-in-out 0.4s forwards;}
+  .curve-line-3{stroke-dasharray:900;stroke-dashoffset:900;animation:drawCurve 3.2s ease-in-out 0.8s forwards;}
+  .curve-dots{opacity:0;animation:dotsAppear 1s ease forwards 1.5s;}
+  .confidence-band{opacity:0;animation:bandAppear 1.4s ease forwards 1.2s;}
+  @keyframes drawCurve{to{stroke-dashoffset:0;}}
+  @keyframes dotsAppear{to{opacity:1;}}
+  @keyframes bandAppear{to{opacity:1;}}
+
+  .floating-particle{
+    position:absolute;border-radius:50%;pointer-events:none;
+    animation:float linear infinite;
+  }
+  @keyframes float{
+    0%{transform:translateY(0px) rotate(0deg);opacity:0;}
+    10%{opacity:0.7;}90%{opacity:0.25;}
+    100%{transform:translateY(-520px) rotate(360deg);opacity:0;}
+  }
+
+  .credits{
+    position:absolute;bottom:14px;
+    font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.20);text-transform:uppercase;
+    opacity:0;animation:revealUp 0.8s ease forwards 2.7s;
+  }
+
+  @keyframes ringPulse{0%,100%{opacity:0.35;transform:scale(1);}50%{opacity:0.75;transform:scale(1.04);}}
+  .pulse-ring{animation:ringPulse 3s ease-in-out infinite;}
+  .pulse-ring-2{animation:ringPulse 3s ease-in-out infinite 0.6s;}
+</style>
+
+<div class="gam-loader">
+
+  <!-- Floating particles -->
+  <div class="floating-particle" style="width:4px;height:4px;background:#2E86AB;left:12%;bottom:5%;animation-duration:9s;"></div>
+  <div class="floating-particle" style="width:3px;height:3px;background:#A23B72;left:25%;bottom:10%;animation-duration:12s;"></div>
+  <div class="floating-particle" style="width:5px;height:5px;background:#06A77D;left:70%;bottom:8%;animation-duration:10s;"></div>
+  <div class="floating-particle" style="width:3px;height:3px;background:#2E86AB;left:85%;bottom:15%;animation-duration:14s;"></div>
+  <div class="floating-particle" style="width:2px;height:2px;background:#A23B72;left:50%;bottom:5%;animation-duration:11s;"></div>
+
+  <!-- Background GAM curves -->
+  <svg class="bg-curves" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
+    <path class="confidence-band"
+      d="M0,280 C80,260 160,180 240,150 C320,120 380,130 440,145 C500,160 560,185 640,170 C700,158 750,165 800,155
+         L800,195 C750,205 700,198 640,210 C560,225 500,200 440,185 C380,170 320,160 240,190 C160,220 80,300 0,320 Z"
+      fill="rgba(46,134,171,0.06)"/>
+    <path class="curve-line"
+      d="M-20,340 C60,310 130,230 210,190 C290,150 350,155 420,168 C490,181 540,195 610,185 C670,177 730,172 820,165"
+      fill="none" stroke="#2E86AB" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+    <path class="curve-line-2"
+      d="M-20,300 C60,272 130,195 210,158 C290,121 350,128 420,140 C490,152 540,166 610,155 C670,146 730,140 820,133"
+      fill="none" stroke="#2E86AB" stroke-width="1" stroke-dasharray="5,4" opacity="0.35"/>
+    <path class="curve-line-2"
+      d="M-20,378 C60,348 130,268 210,225 C290,182 350,183 420,196 C490,209 540,224 610,213 C670,204 730,200 820,196"
+      fill="none" stroke="#2E86AB" stroke-width="1" stroke-dasharray="5,4" opacity="0.35"/>
+    <path class="curve-line-3"
+      d="M-20,390 C50,370 100,330 160,280 C220,230 280,260 340,290 C400,320 440,340 500,310 C560,278 610,250 680,240 C730,233 780,238 820,235"
+      fill="none" stroke="#A23B72" stroke-width="1.6" opacity="0.45"/>
+    <g class="curve-dots">
+      <circle cx="60"  cy="330" r="2.5" fill="#ffffff" opacity="0.3"/>
+      <circle cx="145" cy="260" r="2.5" fill="#ffffff" opacity="0.3"/>
+      <circle cx="240" cy="178" r="2.5" fill="#5cbce0" opacity="0.55"/>
+      <circle cx="400" cy="172" r="2.5" fill="#5cbce0" opacity="0.55"/>
+      <circle cx="560" cy="189" r="2.5" fill="#5cbce0" opacity="0.55"/>
+      <circle cx="715" cy="172" r="2.5" fill="#5cbce0" opacity="0.55"/>
+    </g>
+  </svg>
+
+  <!-- Main centred content -->
+  <div class="gam-logo-wrap">
+
+    <!-- 1 · Logo badge -->
+    <div class="seq-item delay-1" style="position:relative;">
+      <svg class="pulse-ring" style="position:absolute;top:-12px;left:-12px;width:164px;height:164px;pointer-events:none;" viewBox="0 0 164 164">
+        <circle cx="82" cy="82" r="78" fill="none" stroke="#2E86AB" stroke-width="1.2" opacity="0.4"/>
+      </svg>
+      <svg class="pulse-ring-2" style="position:absolute;top:-6px;left:-6px;width:152px;height:152px;pointer-events:none;" viewBox="0 0 152 152">
+        <circle cx="76" cy="76" r="72" fill="none" stroke="#A23B72" stroke-width="0.8" stroke-dasharray="5 4" opacity="0.35"/>
+      </svg>
+
+      <svg class="logo-svg-badge" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="ll-bgG" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#162232"/>
+            <stop offset="100%" stop-color="#0d1b2a"/>
+          </radialGradient>
+          <linearGradient id="ll-txtG" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#5cbce0"/>
+            <stop offset="100%" stop-color="#d07aaa"/>
+          </linearGradient>
+          <clipPath id="ll-cc"><circle cx="70" cy="70" r="60"/></clipPath>
+        </defs>
+        <circle cx="70" cy="70" r="63" fill="none" stroke="#2E86AB" stroke-width="0.8" opacity="0.45"/>
+        <circle cx="70" cy="70" r="60" fill="url(#ll-bgG)"/>
+        <g clip-path="url(#ll-cc)">
+          <!-- CI band -->
+          <path d="M10,82 C26,72 42,54 58,46 C68,41 78,43 88,47 C98,51 108,56 130,51 L130,62 C108,67 98,62 88,57 C78,52 68,52 58,58 C42,66 26,84 10,94Z"
+                fill="rgba(92,188,224,0.10)"/>
+          <!-- GAM curve -->
+          <path d="M10,88 C26,78 42,60 58,52 C68,46 78,48 88,52 C98,56 110,60 130,56"
+                fill="none" stroke="#5cbce0" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- GAM upper dashed CI -->
+          <path d="M10,82 C26,72 42,54 58,46 C68,41 78,43 88,47 C98,51 110,55 130,51"
+                fill="none" stroke="#5cbce0" stroke-width="0.9" stroke-dasharray="4 3" opacity="0.5"/>
+          <!-- Axes -->
+          <line x1="10" y1="100" x2="130" y2="100" stroke="rgba(255,255,255,0.10)" stroke-width="0.7"/>
+          <line x1="22"  y1="40"  x2="22"  y2="100" stroke="rgba(255,255,255,0.10)" stroke-width="0.7"/>
+          <!-- Data dots -->
+          <circle cx="30"  cy="84" r="2.2" fill="#5cbce0"/>
+          <circle cx="48"  cy="66" r="2.2" fill="#5cbce0"/>
+          <circle cx="62"  cy="52" r="2.5" fill="#5cbce0"/>
+          <circle cx="78"  cy="49" r="2.2" fill="#5cbce0"/>
+          <circle cx="94"  cy="52" r="2.2" fill="#5cbce0"/>
+          <circle cx="112" cy="57" r="2.2" fill="#5cbce0"/>
+          <!-- Sun -->
+          <circle cx="32" cy="52" r="7" fill="#EF9F27" opacity="0.9"/>
+          <line x1="32" y1="42" x2="32" y2="39" stroke="#FAC775" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="32" y1="62" x2="32" y2="65" stroke="#FAC775" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="22" y1="52" x2="19" y2="52" stroke="#FAC775" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="42" y1="52" x2="45" y2="52" stroke="#FAC775" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="25" y1="45" x2="23" y2="43" stroke="#FAC775" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="39" y1="45" x2="41" y2="43" stroke="#FAC775" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="25" y1="59" x2="23" y2="61" stroke="#FAC775" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="39" y1="59" x2="41" y2="61" stroke="#FAC775" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- Raindrops -->
+          <path d="M106,42 C106,42 102.5,47.5 102.5,50 C102.5,52.2 104.1,54 106,54 C107.9,54 109.5,52.2 109.5,50 C109.5,47.5 106,42 106,42Z" fill="#5cbce0" opacity="0.85"/>
+          <path d="M116,46 C116,46 113.2,50.5 113.2,52.5 C113.2,54.2 114.5,55.6 116,55.6 C117.5,55.6 118.8,54.2 118.8,52.5 C118.8,50.5 116,46 116,46Z" fill="#5cbce0" opacity="0.5"/>
+          <path d="M96,47 C96,47 93.5,51 93.5,52.7 C93.5,54.2 94.7,55.5 96,55.5 C97.3,55.5 98.5,54.2 98.5,52.7 C98.5,51 96,47 96,47Z" fill="#5cbce0" opacity="0.5"/>
+          <!-- Mosquito wings -->
+          <ellipse cx="64" cy="68" rx="10" ry="5" transform="rotate(-35 64 68)" fill="rgba(92,188,224,0.18)" stroke="#5cbce0" stroke-width="0.7"/>
+          <ellipse cx="61" cy="74" rx="8"  ry="4" transform="rotate(-20 61 74)" fill="rgba(92,188,224,0.14)" stroke="#5cbce0" stroke-width="0.6"/>
+          <ellipse cx="76" cy="68" rx="10" ry="5" transform="rotate( 35 76 68)" fill="rgba(92,188,224,0.18)" stroke="#5cbce0" stroke-width="0.7"/>
+          <ellipse cx="79" cy="74" rx="8"  ry="4" transform="rotate( 20 79 74)" fill="rgba(92,188,224,0.14)" stroke="#5cbce0" stroke-width="0.6"/>
+          <!-- Mosquito body -->
+          <ellipse cx="70" cy="80" rx="4"  ry="10" fill="#a8d8ec" opacity="0.9"/>
+          <ellipse cx="70" cy="69" rx="5"  ry="4.5" fill="#c8e8f5" opacity="0.95"/>
+          <circle  cx="70" cy="63" r="3.5" fill="#c8e8f5" opacity="0.95"/>
+          <line x1="70" y1="66" x2="70" y2="56" stroke="#90cce0" stroke-width="0.9" stroke-linecap="round"/>
+          <path d="M69,61 C67.5,59 66,57.5 64.5,56.5" fill="none" stroke="#90cce0" stroke-width="0.7" stroke-linecap="round"/>
+          <path d="M71,61 C72.5,59 74,57.5 75.5,56.5" fill="none" stroke="#90cce0" stroke-width="0.7" stroke-linecap="round"/>
+          <!-- Mosquito legs -->
+          <path d="M66,71 C62,73 58,76 55,79"   fill="none" stroke="#90cce0" stroke-width="0.7" stroke-linecap="round"/>
+          <path d="M66,75 C61,78 57,82 54,86"   fill="none" stroke="#90cce0" stroke-width="0.7" stroke-linecap="round"/>
+          <path d="M66,79 C60,83 56,88 54,93"   fill="none" stroke="#90cce0" stroke-width="0.7" stroke-linecap="round"/>
+          <path d="M74,71 C78,73 82,76 85,79"   fill="none" stroke="#90cce0" stroke-width="0.7" stroke-linecap="round"/>
+          <path d="M74,75 C79,78 83,82 86,86"   fill="none" stroke="#90cce0" stroke-width="0.7" stroke-linecap="round"/>
+          <path d="M74,79 C80,83 84,88 86,93"   fill="none" stroke="#90cce0" stroke-width="0.7" stroke-linecap="round"/>
+        </g>
+        <!-- Divider + label inside badge -->
+        <line x1="24" y1="118" x2="116" y2="118" stroke="url(#ll-txtG)" stroke-width="0.9" opacity="0.7"/>
+        <text x="30" y="110" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="white">GAM(M)</text>
+        <text x="82" y="110" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="url(#ll-txtG)">-MAP</text>
+      </svg>
+    </div>
+
+    <!-- 2 · Title -->
+    <div class="logo-title seq-item delay-2">GAM(M)<span>-MAP</span></div>
+
+    <!-- 3 · Divider -->
+    <div class="divider-line seq-item delay-3"></div>
+
+    <!-- 4 · Subtitle -->
+    <div class="logo-subtitle seq-item delay-4">GAM(M)-Based Malaria Analytics Platform</div>
+
+    <!-- 5 · Pills row 1 -->
+    <div class="tag-pills seq-item delay-5">
+      <span class="pill pill-blue">Ghana</span>
+      <span class="pill pill-pink">Malaria Data</span>
+      <span class="pill pill-teal">Temporal</span>
+      <span class="pill pill-blue">Seasonal</span>
+      <span class="pill pill-teal">Population</span>
+
+    </div>
+
+   <!-- 6 · Pills row 2 -->
+<div class="tag-pills seq-item delay-6">
+  <span class="pill pill-blue">10 Regions</span>
+  <span class="pill pill-pink">Climate Data</span>
+  <span class="pill pill-teal">90 Models</span>
+  <span class="pill pill-blue">9 GAMMs</span>
+  <span class="pill pill-teal">1 GAM</span>
+</div>
+
+
+    <!-- 7 · Institutional logos -->
+    <div class="brand-logos-row seq-item delay-7">
+      <a href="https://masha.uct.ac.za" target="_blank" title="MASHA">
+        <img src="./images/logo_masha.png" alt="MASHA" class="brand-logo-img"/>
+      </a>
+      <div class="brand-sep"></div>
+      <a href="https://www.uct.ac.za" target="_blank" title="University of Cape Town">
+        <img src="./images/logo_uct.png" alt="UCT" class="brand-logo-img"/>
+      </a>
+      <div class="brand-sep"></div>
+      <a href="https://science.uct.ac.za/departments/statistical-sciences" target="_blank" title="Department of Statistical Sciences, UCT">
+        <img src="./images/Statistical Science.jpg" alt="Statistical Sciences" class="brand-logo-img"/>
+      </a>
+      <div class="brand-sep"></div>
+      <a href="https://ghs.gov.gh/" target="_blank" title="Ghana Health Service">
+        <img src="./images/GHS_logo.jpg" alt="Ghana Health Service" class="brand-logo-img"/>
+      </a>
+    </div>
+
+    <!-- 8 · Progress bar -->
+    <div class="loader-bar-wrap seq-item delay-8">
+      <div class="loader-bar"></div>
+    </div>
+
+    <!-- 9 · Status text -->
+    <div class="loader-status seq-item delay-9">Loading data &amp; models&hellip;</div>
+
+  </div>
+
+  <div class="credits">MASHA &middot; UCT &middot; Statistical Sciences &middot; GHS</div>
+
+</div>

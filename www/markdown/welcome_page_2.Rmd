@@ -1,0 +1,17 @@
+---
+title: "about_2"
+author: "Edward"
+date: "2025-03-04"
+output: html_document
+---
+
+The diagram below illustrates the modelling workflow for **Generalised Additive Models (GAMs)** and **Generalised Additive Mixed Models (GAMMs):**
+
+<div style="text-align: center;">
+  <img src="images/gamm_modelling_workflow.png" 
+       alt="GAM Modeling Workflow" 
+       style="display:block; margin-left:auto; margin-right:auto; width:800px; height:auto; margin-top:0px; margin-bottom:0px;">
+</div>
+
+***For detailed algorithmic steps and mathematical formulations, please refer to the manuscript or the GAM framework under the Appendix tab.***
+
