@@ -1,7 +1,7 @@
 # GAM(M)-MAP: GAM(M)-Based Malaria Analytics Platform
 <p align="center">
   <strong>Temporal and Climatic Analysis of Uncomplicated Malaria in Ghana</strong><br/>
-  A Generalised Additive Model (GAM) and Generalised Additive Mixed Model (GAMM) framework for regional malaria epidemiology
+  Regional Generalised Additive and Generalised Additive Mixed Model framework for malaria epidemiology
 </p>
 <p align="center">
   <img src="https://img.shields.io/badge/R-Shiny-blue?logo=r" alt="R Shiny"/>
@@ -18,7 +18,7 @@
 **GAM(M)-MAP** is an interactive R Shiny dashboard built to accompany the research article:
 
 > **Akurugu E., Awine T., Seidu B., Peprah N.Y., Mohammed W., Boateng P., Abiwu P.H.A.K., Silal S.P.**
-> *Temporal and climatic drivers of uncomplicated malaria in Ghana: A Regional Generalised Additive Model (GAM) and Generalised Additive Mixed Model (GAMM) analysis.*
+> *Temporal and climatic drivers of uncomplicated malaria in Ghana: Regional Generalised Additive and Generalised Additive Mixed Model analysis.*
 > PLOS ONE (under review), 2026.
 
 The platform enables users to explore regional malaria case patterns across Ghana's ten former administrative regions (2012–2023), investigate nonlinear relationships between climate variables and malaria, and interact with fitted GAM and GAMM model outputs — all through an intuitive browser-based interface.
@@ -232,7 +232,7 @@ shiny::runApp()
 ```
 
 
-> **Note:** Pre-fitted model `.rds` files must be present in the working directory (or `models/` subfolder) before launching the app. The app loads all 80 regional model objects at startup. Fitting models from scratch requires access to the DHIMS2 and GMeT datasets, which are available upon request from NMEP and GMeT respectively.
+> **Note:** Pre-fitted model `.rds` files must be present in the working directory (or `models/` subfolder) before launching the app. The app loads all regional model  objects at startup. Fitting models from scratch requires access to the DHIMS2 and GMeT datasets, which are available upon request from NMEP and GMeT respectively.
 
 ---
 
@@ -278,7 +278,7 @@ If you use this platform or the associated analysis in your work, please cite:
              Peprah, Nana Yaw and Mohammed, Wahjib and Boateng, Paul and
              Abiwu, Paul Hilarius Asiwome Kosi and Silal, Sheetal Prakash},
   title   = {Temporal and climatic drivers of uncomplicated malaria in Ghana:
-             A Regional Generalised Additive Model and Generalised Additive Mixed Model analysis},
+             Regional Generalised Additive and Generalised Additive Mixed Model analysis},
   journal = {PLOS ONE},
   year    = {2026},
   note    = {Under review}
