@@ -1619,7 +1619,7 @@ ui <- dashboardPage(
                          padding:50px;margin-top:5px;margin-bottom:5px;text-align:center;",
                                    h2(style="margin:0 0 20px 0;", icon("github",class="fa-3x")," View Source Code"),
                                    p(style="font-size:1.50rem;opacity:0.9;","Access the complete R code repository on GitHub"),
-                                   tags$a(href="https://github.com/EdwardAkurugu/GAM-MAP", target="_blank",
+                                   tags$a(href="https://github.com/EdwardAkurugu/GAMM-MAP", target="_blank",
                                           class="btn btn-primary",
                                           style="font-size:2.0rem;padding:15px 40px;margin-top:20px;",
                                           icon("github",class="fa-lg")," Visit GitHub Repository"),
