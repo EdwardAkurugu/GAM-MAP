@@ -72,6 +72,40 @@ p, li, td, th, label, .box-title, h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==============================================================
+   HEADER/LOGO/TOGGLE HEIGHT 
+   ============================================================== */
+.main-header {
+  height: 66px !important;
+}
+.main-header .logo {
+  height: 66px !important;
+  line-height: 66px !important;
+  padding: 0 15px !important;
+}
+.main-header .logo span {
+  margin-top: 0 !important;   /* remove the old 20px offset that was stretching the box */
+  line-height: 66px !important;
+  vertical-align: middle;
+}
+.main-header .navbar {
+  min-height: 66px !important;
+}
+.main-header .sidebar-toggle {
+  height: 66px !important;
+  line-height: 66px !important;
+  padding: 0 15px !important;
+}
+.main-header .navbar > .sidebar-toggle {
+  background: transparent !important;  /* let the gradient show through instead of AdminLTE's dark default */
+}
+
+/* Keep sidebar/content aligned to the new header height */
+.main-sidebar, .left-side {
+  padding-top: 66px !important;
+}
+
+
+/* ==============================================================
    SIDEBAR
    ============================================================== */
 .main-sidebar, .left-side {
